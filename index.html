@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Do you want to play a game?</title>
+        <!-- import Bulma CDN for extra snazzy styling -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
@@ -16,11 +17,32 @@
         <main>
             <section id="intro">
                 <label>Beginner's Coding Challenge</label>
-                <p>You have X-time to answer each question. Incorrect answers deduct score and time. Show me what you got!</p>
+                <p>You have X-time to answer each question. Incorrect answers deduct score and time. Try for a high score!</p>
+                <button id="start-quiz-btn">Start Challenge</button>
+            </section>
+            <section class="hide" id="questions">
+                <h1 id="question"></h1>
+                <ol id="choices"></ol>
+            </section>
+            <section class="results" class="hide"> 
+             <br>
+            </section>
+            <section class="hide" id="name">
+                <label>Complete!</label>
+                <p>Final Score: <span id="final-score"></span></p>
+              <br>
+                <p>Enter name: <input type="text" id="name"></p>
+                <button id="submit-name">Submit</button>
+            </section>
+            <section class="hide" id="high-scores">
+            <ol class="hide" id="scoreboard"></ol>
+            <button id="return-button">Return</button>
+            <br>
+            <button id="clear-button">Clear Scoreboard</button>               
             </section>
         </main>
+        <!-- insert js below -->
     </body>
     <footer>
-
     </footer>
 </html>
