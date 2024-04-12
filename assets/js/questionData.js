@@ -1,27 +1,27 @@
 var questionData = [
     {
-        title : "Commonly used data types Do Not Include:",
-        choices : ["1. strings","2. booleans","3. alerts","4. numbers"],
-        solution : "alerts"
+        title : "What is js?",
+        choices : ["1. javascript","2. january sky","3. jupiters","4. jason momoa"],
+        solution : "1. javascript"
     },
     {
-        title : "The condition in an if/else statement is enclosed with <span style='border-bottom: solid black 2px;margin-left: 5px;margin-right: 5px;width: 100px;display: inline-block;'></span>.",
-        choices : ["1. quotes","2. curly brackets","3. parenthesis","4. square brackets"],
-        solution : "parenthesis"
+        title : "what is HTML?",
+        choices : ["1. Hypertext Makeout Language","2. Hyper Tough Marker Learning","3. Heavy Tonal Masked Lantern","4. Hypertext Markup Language"],
+        solution : "4. Hypertext Markup Language"
     },
     {
-        title : "Arrays in JavaScript can be used to store <span style='border-bottom: solid black 2px;margin-left: 5px;margin-right: 5px;width: 100px;display: inline-block;'></span>.",
-        choices : ["1. numbers and strings","2. other arrays","3. booleans","4. all of the above"],
-        solution : "all of the above"
+        title : "What does PHP stand for?",
+        choices : ["1. Photoshop Human Peripheral","2. Personal House Project","3. Passed Health Points","4. It literally just stands for PHP"],
+        solution : "4. It literally just stands for PHP"
     },
     {
-        title : "Sring values must be enclosed within <span style='border-bottom: solid black 2px;margin-left: 5px;margin-right: 5px;width: 100px;display: inline-block;'></span> when being assigned to variables.",
-        choices : ["1. commas","2. curly brackets","3. quotes","4. parenthesis"],
-        solution : "quotes"
+        title : "Are Java and Javascript different?",
+        choices : ["1. yes","2. no","3. sometimes","4. wouldn't you like to know?"],
+        solution : "1. yes"
     },
     {
-        title : "A very useful tool used during development and debugging for printing content to the debugger is:",
-        choices : ["1. Javascript","2. terminal/bash","3. for loops","4. console.log"],
-        solution : "console.log"
+        title : "Is coding bootcamp worth it?",
+        choices : ["1. yes","2. no","3. I hope so","4. Only if you're a good student"],
+        solution : "4. Only if you're a good student"
     }
 ]
