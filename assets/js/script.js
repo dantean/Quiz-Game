@@ -46,6 +46,35 @@ function renderQuestions() {
     }
 }
 
+function nextQuestion(event) {
+    if (!event.target.matches("button")) return; // makes sure the event only triggers when a button is clicked
+    var selectedAnswer = event.target.textContent;
+    var correctAnswer = questionData[index].solution;
+
+    if (selectedAnswer === correctAnswer) {
+        messageEl.textContent = "Correct! :)";
+    } else {
+messageEl.textContent = "Incorrect! :(";
+timeRemaining -=15;   
+    }
+    // get next question
+    index++;
+    if (index < questionData.length) {
+        renderQuestions();
+    } else {
+        endQuiz();
+        // ends the quiz if there are no more questions left
+    }
+}
+// When the quiz ends, the timer stops and final score is displayed
+function endQuiz() {
+    clearInterval(setIntervalId); 
+    questionSectionEl.classList.add("hide");
+    finalScoreEl.textContent = timeRemaining;
+    resultEl.classList.remove("hide");
+}
+
+
 function refreshData() {
     viewScoreEl.classList.remove("hide");
     if (timerLabelEl) timerLabelEl.classList.remove("hide");
