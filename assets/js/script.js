@@ -10,9 +10,8 @@ var resultEl = document.getElementById("results");
 var messageEl = document.getElementById("message");
 var nameInputEl = document.getElementById("name-input");
 var finalScoreEl = document.getElementById("final-score");
-var inputNamesEl = document.getElementById("name"); 
 var submitNameEl = document.getElementById("submit-name-btn");
-var highScoresEl = document.getElementById("high-scores");
+var highScoresEl = document.getElementById("high-scores-section");
 var highScoreListEl = document.getElementById("high-score-list");
 var goBackBtnEl = document.getElementById("back-button"); 
 var clearHighscoreBtnEl = document.getElementById("clear-button"); 
@@ -32,7 +31,7 @@ function renderQuestions() {
     messageEl.innerHTML = "";
     if (index < questionData.length) {
         questionTitleEl.innerHTML = questionData[index].title; 
-        choicesEl.textContent = ""; 
+        choicesEl.innerHTML = ""; // corrected from 'textContent' to 'innerHTML'
         nameInputEl.value = ""; 
         for (var i = 0; i < questionData[index].choices.length; i++) {
             var li = document.createElement("li");
@@ -47,42 +46,38 @@ function renderQuestions() {
 }
 
 function nextQuestion(event) {
-    if (!event.target.matches("button")) return; // makes sure the event only triggers when a button is clicked
+    if (!event.target.matches("button")) return;
     var selectedAnswer = event.target.textContent;
     var correctAnswer = questionData[index].solution;
 
     if (selectedAnswer === correctAnswer) {
-        messageEl.textContent = "Correct! :)";
+        messageEl.textContent = "Correct!";
     } else {
-messageEl.textContent = "Incorrect! :(";
-timeRemaining -=15;   
+        messageEl.textContent = "Incorrect!";
+        timeRemaining -= 15;
     }
-    // get next question
     index++;
     if (index < questionData.length) {
         renderQuestions();
     } else {
         endQuiz();
-        // ends the quiz if there are no more questions left
     }
 }
-// When the quiz ends, the timer stops and final score is displayed
+
 function endQuiz() {
-    clearInterval(setIntervalId); 
+    clearInterval(setIntervalId);
     questionSectionEl.classList.add("hide");
     finalScoreEl.textContent = timeRemaining;
     resultEl.classList.remove("hide");
 }
 
-
 function refreshData() {
     viewScoreEl.classList.remove("hide");
     if (timerLabelEl) timerLabelEl.classList.remove("hide");
     timeRemaining = questionData.length * 15;
-    timerEl.textContent = "0"; 
+    timerEl.textContent = "0";
     index = 0;
 }
-
 
 startQuizEl.addEventListener("click", startQuiz);
 choicesEl.addEventListener("click", nextQuestion);

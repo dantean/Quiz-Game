@@ -3,46 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do you want to play a game?</title>
-            <!-- import Bulma CDN for extra snazzy styling -->
+    <title>SUPER DUPER QUIZ GAME!!!!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <header>
-        <label id="view-score">View High Scores</label>
-        <nav>
-            <label id="timer">Timer:</label>
+        <h1 class="title has-text-centered">SUPER DUPER QUIZ GAME!!!!</h1>
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Timer</p>
+                    <p class="title" id="timer">60</p>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
         <section id="quiz-intro">
-            <label>Beginner's Coding Challenge</label>
-            <p>You have X-time to answer each question. Incorrect answers deduct score and time. Try for a high score!</p>
-            <button id="start-quiz-btn">Start Challenge</button>
+            <div class="container">
+                <h2 class="subtitle">Beginner's Coding Challenge</h2>
+                <p>You have 60 seconds to answer each question. Incorrect answers deduct score and time. Try for a high score!</p>
+                <button id="start-quiz-btn" class="button is-primary">Start Challenge</button>
+            </div>
         </section>
-        <section class="hide" id="questions">
-            <h1 id="question"></h1>
-            <ol id="choices"></ol>
+        <section class="section hide" id="questions">
+            <div class="container">
+                <h2 id="question" class="title"></h2>
+                <ol id="choices" class="menu-list"></ol>
+            </div>
         </section>
-        <section class="hide" id="results"> 
-            <br>
+        <section id="results" class="section hide">
+            <div class="container">
+                <h2 class="title">Quiz Completed!</h2>
+                <p class="subtitle">Final Score: <span id="final-score"></span></p>
+                <p>Enter your name: <input type="text" id="name-input" class="input"></p>
+                <button id="submit-name-btn" class="button is-link">Submit</button>
+                <button onclick="refreshData()" class="button is-info">Try again?</button>
+            </div>
         </section>
-        <section class="hide" id="name-input-section">
-            <label>Complete!</label>
-            <p>Final Score: <span id="final-score"></span></p>
-            <br>
-            <p>Enter name: <input type="text" id="name-input"></p>
-            <button id="submit-name-btn">Submit</button>
-        </section>
-        <section class="hide" id="high-scores-section">
-            <ol class="hide" id="high-score-list"></ol>
-            <button id="back-button">Back</button>
-            <br>
-            <button id="clear-button">Clear Scoreboard</button>               
+        <section id="high-scores-section" class="section hide">
+            <div class="container">
+                <h2 class="title">High Scores</h2>
+                <ol id="high-score-list" class="menu-list"></ol>
+                <button id="back-button" class="button is-warning">Back</button>
+                <button id="clear-button" class="button is-danger">Clear Scoreboard</button>
+            </div>
         </section>
     </main>
     <script src="./assets/js/questionData.js"></script>
+    <script src="./assets/js/studentData.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 <footer>
