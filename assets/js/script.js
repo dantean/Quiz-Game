@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const quizIntroEl = document.getElementById("quiz-intro");
     const timerEl = document.getElementById("timer");
     const startQuizEl = document.getElementById("start-quiz-btn");
-    const questionSectionEl = document.getElementById("questions");
+    const questionSectionEl = document.getElementById("question-panel");
     const questionTitleEl = document.getElementById("question");
     const choicesEl = document.getElementById("choices");
     const resultEl = document.getElementById("results");
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
             timeRemaining = 60;
             index = 0;
             score = 0;
-            startTimer();  
-            renderQuestions(); 
+            startTimer();
+            renderQuestions();
         }
     };
 
