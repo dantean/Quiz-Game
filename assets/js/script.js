@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInputEl = document.getElementById("name-input");
     const finalScoreEl = document.getElementById("final-score");
     const submitNameEl = document.getElementById("submit-name-btn");
+    const messageEl = document.getElementById("message")
     let setIntervalId;
     let timeRemaining = 60;
     let index = 0;
@@ -83,6 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     startQuizEl.addEventListener("click", startQuiz);
-    submitNameEl.addEventListener("click", ()=> storeStudentData(nameInputEl, finalScoreEl, questionSectionEl));
+    submitNameEl.addEventListener("click", ()=> storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, messageEl));
 
 });
