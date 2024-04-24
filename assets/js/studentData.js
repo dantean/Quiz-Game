@@ -1,6 +1,6 @@
 var studentDatalog = [];
 
-function storeStudentData(nameInputEl, finalScoreEl) {
+function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl) {
     var studentData = {
         name: nameInputEl.value,
         score: finalScoreEl.textContent

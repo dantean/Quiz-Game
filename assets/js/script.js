@@ -83,5 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     startQuizEl.addEventListener("click", startQuiz);
-    submitNameEl.addEventListener("click", storeStudentData);
+    submitNameEl.addEventListener("click", ()=> storeStudentData(nameInputEl, finalScoreEl, questionSectionEl));
+
 });
