@@ -1,5 +1,5 @@
 // var studentDatalog = [];
-const getScores = JSON.parse(localStorage.getItem("studentDatalog"));
+const getScores = JSON.parse(localStorage.getItem("studentDatalog")) || [];
 const highScoresEl = document.getElementById("high-scores-section");
 const highScoreListEl = document.getElementById("high-score-list");
 const timerEl = document.getElementById("timer");
@@ -13,7 +13,7 @@ function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl
         score: finalScoreEl.textContent
     };
     // studentDatalog.push(studentData);
-    localStorage.setItem('studentDatalog', JSON.stringify(studentDatalog));
+    // localStorage.setItem('studentDatalog', JSON.stringify(studentDatalog));
     questionSectionEl.classList.add("hide");
     resultEl.classList.add("hide");
     nameInputEl.classList.add("hide");
@@ -23,7 +23,7 @@ function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl
 
 
 getScores.push(studentData);
-localStorage.setItem("studentDatalog", getScores);
+localStorage.setItem("studentDatalog", JSON.stringify(getScores));
 
     getScores.sort((a, b) => b.score - a.score);
     highScoreListEl.innerHTML = "";
