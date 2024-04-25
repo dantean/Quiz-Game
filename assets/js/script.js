@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timerEl.style.display = 'none';
     questionSectionEl.style.display = 'none';
-    resultEl.style.display = 'none';
+    // resultEl.style.display = 'none';
 
     const startQuiz = () => {
         if (startQuizEl.textContent === "Start Challenge") {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(setIntervalId);
         questionSectionEl.style.display = 'none';
         timerEl.style.display = 'none';
-        resultEl.style.display = '';
+        resultEl.classList.remove("hide");
         finalScoreEl.textContent = score + timeRemaining;
     };
 
