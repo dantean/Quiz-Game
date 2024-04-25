@@ -1,10 +1,11 @@
 var studentDatalog = [];
 var highScoresEl = document.getElementById("high-scores-section");
-// var highScoreList = document.getElementById();
+const highScoreListEl = document.getElementById("high-score-list");
 const timerEl = document.getElementById("timer");
 
+
 function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl) {
-    console.log("hello")
+    // console.log("hello")
     var studentData = {
         name: nameInputEl.value,
         score: finalScoreEl.textContent
