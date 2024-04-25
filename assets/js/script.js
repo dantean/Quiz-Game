@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInputEl = document.getElementById("name-input");
     const finalScoreEl = document.getElementById("final-score");
     const submitNameEl = document.getElementById("submit-name-btn");
-    const messageEl = document.getElementById("message")
+    const messageEl = document.getElementById("message");
     let setIntervalId;
     let timeRemaining = 60;
     let index = 0;

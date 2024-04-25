@@ -1,8 +1,10 @@
-var studentDatalog = [];
-var highScoresEl = document.getElementById("high-scores-section");
+// var studentDatalog = [];
+const getScores = JSON.parse(localStorage.getItem("studentDatalog"));
+const highScoresEl = document.getElementById("high-scores-section");
 const highScoreListEl = document.getElementById("high-score-list");
 const timerEl = document.getElementById("timer");
-
+const clearButtonEl = document.getElementById("clear-button");
+const backButtonEl = document.getElementById("back-button");
 
 function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl) {
     // console.log("hello")
@@ -10,7 +12,7 @@ function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl
         name: nameInputEl.value,
         score: finalScoreEl.textContent
     };
-    studentDatalog.push(studentData);
+    // studentDatalog.push(studentData);
     localStorage.setItem('studentDatalog', JSON.stringify(studentDatalog));
     questionSectionEl.classList.add("hide");
     resultEl.classList.add("hide");
@@ -19,10 +21,13 @@ function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl
     // viewScoreEl.classList.add("hide");
     timerEl.classList.add("hide");
 
-    var getScores = JSON.parse(localStorage.getItem("studentDatalog"));
+
+getScores.push(studentData);
+localStorage.setItem("studentDatalog", getScores);
+
     getScores.sort((a, b) => b.score - a.score);
-    // highScoreListEl.innerHTML = "";
-    // highScoreListEl.classList.remove("hide");
+    highScoreListEl.innerHTML = "";
+    highScoreListEl.classList.remove("hide");
     if (getScores != null) {
         for (var i = 0; i < getScores.length; i++) {
             var studentli = document.createElement("li");
@@ -33,10 +38,16 @@ function storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl
 }
 
 function goBackMain() {
+    document.location.reload();
 }
 
 function clearHighScores() {
+    highScoreListEl.innerHTML = "";
+    localStorage.setItem("studentDatalog", []);
 }
 
 function viewHighScore() {
 }
+
+clearButtonEl.addEventListener("click", clearHighScores);
+backButtonEl.addEventListener("click", goBackMain)
