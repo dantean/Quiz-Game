@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let index = 0;
     let score = 0;
 
+// timer and question sections are hidden at the start
+
     timerEl.style.display = 'none';
     questionSectionEl.style.display = 'none';
-    // resultEl.style.display = 'none';
 
+// Pressing the 'start challenge' button hides the quiz intro and un-hides the timer and questions
     const startQuiz = () => {
         if (startQuizEl.textContent === "Start Challenge") {
             quizIntroEl.classList.add("hide");
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
             timerEl.style.display = '';
             startQuizEl.textContent = "Restart";
             renderQuestions();
+
+// logic concerning the timer starting at 60 seconds and ticking down as it renders questions
             setIntervalId = setInterval(startTimer, 1000);
         } else {
             clearInterval(setIntervalId);
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             renderQuestions();
         }
     };
-
+// logic for rendering questions from the /js/questionData.js file. When there are no more questions, it ends the quiz. 
     const renderQuestions = () => {
         if (index < questionData.length) {
             questionTitleEl.innerHTML = questionData[index].title;
@@ -53,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             endQuiz();
         }
     };
-
+// Choosing the correct answer gives + 10 score, the wrong answer gives -10 score
     const nextQuestion = choice => {
         const correctAnswer = questionData[index].solution;
         if (choice === correctAnswer) {
@@ -66,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderQuestions();
     };
 
+// when the quiz ends, hide the questions and timer, and un-hide the results  
     const endQuiz = () => {
         clearInterval(setIntervalId);
         questionSectionEl.style.display = 'none';
@@ -82,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             endQuiz();
         }
     };
-
+    
     startQuizEl.addEventListener("click", startQuiz);
     submitNameEl.addEventListener("click", ()=> storeStudentData(nameInputEl, finalScoreEl, questionSectionEl, resultEl));
 
