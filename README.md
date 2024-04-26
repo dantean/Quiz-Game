@@ -26,13 +26,13 @@ MIT License - The License file is provided here : (./LICENSE)
 
 ## Screenshot
 
-
+https://imgur.com/a/Bs2K9uQ
 
 ## Deployed Page and GitHub Repository
 
-Deployed Webpage : 
+Deployed Webpage : https://dantean.github.io/Quiz-Game/
 
-Github Repository: 
+Github Repository: https://github.com/dantean/Quiz-Game
 
 
 ## Credit Where Credit Is Due
